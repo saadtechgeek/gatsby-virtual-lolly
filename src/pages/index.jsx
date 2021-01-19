@@ -1,31 +1,74 @@
 import React, {useState,useRef} from 'react';
-import Lolly from './../components/lolly'
+import Lolly from './../components/lolly';
+import { useMutation,useQuery } from '@apollo/client';
+import gql from 'graphql-tag';
 import "./styles.css";
+const faunadb = require('faunadb'),
+  q = faunadb.query;
+//const shortid = require('shortid');
+
+// const getAllData = gql`
+// {
+//     allAuthors {
+//       id,
+//       name
+//   }
+// }
+// `;
+
+// const getAllData = gql`
+// {
+//     getVCard {
+//       id
+//   }
+// }
+// `;
+
+const ADD_VCARD = gql`
+    mutation addVCard($c1: String!, 
+        $c2: String!,
+        $c3: String!,
+        $rec: String!,
+        $sender: String!,
+        $msg: String!){
+            addVCard(c1: $c1,c2: $c2,c3: $c3,rec: $rec,sender: $sender,msg: $msg){
+                id
+            }
+    }
+`
 
 const Home = () => {
     const [c1, setC1] = useState('#e95946');
     const [c2, setC2] = useState('#d52358');
     const [c3, setC3] = useState('#deaa43');
+    const [addVCard] = useMutation(ADD_VCARD);
 
     const handleSubmit = () => {
         console.log(senderField.current.value)
         console.log(recField.current.value)
         console.log(msgField.current.value)
-        // addVCard({
-        //     variables: {
-        //         c1, c2, c3,
-        //         rec: recField.current.value,
-        //         sender: senderField.current.value,
-        //         msg: msgField.current.value
-        //     }
-        // })
+        addVCard({
+            variables: {
+                c1, c2, c3,
+                rec: recField.current.value,
+                sender: senderField.current.value,
+                msg: msgField.current.value
+            }
+        })
     }
 
     const senderField = useRef();
     const recField = useRef();
     const msgField = useRef();
     
+    // const { loading, error, data } = useQuery(getAllData);
+    // if (loading)
+    //     return <h2>Loading..</h2>
 
+    // if (error)
+    //     return <h2>Error</h2>
+
+    // console.log(data)
 
     return (
         <div className="container">

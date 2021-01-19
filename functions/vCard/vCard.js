@@ -35,7 +35,7 @@ const resolvers = {
   },
   Mutation: {
     addVCard: async (_, { c1, c2, c3, rec, msg, sender }) => {
-      var adminClient = new faunadb.Client({ secret: 'fnAD3k5_3EACB6gCBsRr3R3wpEKT_uo1PpVFackm' });
+      var adminClient = new faunadb.Client({ secret: 'fnAD_67Y6wACBZ94sTTO3s7wq2t0aT0u7-cjOdBn' });
 
       console.log(c1, c2, c3, rec, msg, sender)
       const result = await adminClient.query(
