@@ -1,8 +1,11 @@
 import React from 'react';
-
+import Lolly from './../components/lolly'
 const Home = () => {
     return (
-        <div>Hello World</div>
+        <div>
+            <Lolly/>
+
+        </div>
     )
 }
 export default Home;
