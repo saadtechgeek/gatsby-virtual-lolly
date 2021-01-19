@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Lolly = () => {
+const Lolly = ({top, middle, bottom}) => {
     return (
         <svg className="lollipop" width="163px" height="431px" viewBox="0 0 163 431" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
         <defs>
@@ -17,9 +17,9 @@ const Lolly = () => {
             <mask id="mask-2" fill="white">
               <use xlinkHref="#path-1" />
             </mask>
-            <use className="lollyBottom" fill="#deaa43" fillRule="nonzero" xlinkHref="#path-1" />
-            <rect className="lollyTop" fill="#d52358" fillRule="nonzero" mask="url(#mask-2)" x={-25} y={-9} width={224} height={134} />
-            <rect className="lollyMiddle" fill="#e95946" fillRule="nonzero" mask="url(#mask-2)" x={-29} y={113} width={224} height={111} />
+            <use className="lollyBottom" fill={bottom} fillRule="nonzero" xlinkHref="#path-1" />
+            <rect className="lollyTop" fill={top} fillRule="nonzero" mask="url(#mask-2)" x={-25} y={-9} width={224} height={134} />
+            <rect className="lollyMiddle" fill={middle} fillRule="nonzero" mask="url(#mask-2)" x={-29} y={113} width={224} height={111} />
             <path d="M79.7697726,3.19744231e-14 C63.468207,2.89798741e-14 49.9517074,12.6254516 48.8417198,28.8891833 L30.0731738,303.889183 C28.9074019,320.970275 41.8093181,335.762281 58.89041,336.928053 C59.5929941,336.976004 60.2970081,337 61.0012266,337 L17,337 C-0.120827245,337 -14,323.120827 -14,306 C-14,305.265258 -13.9738784,304.530748 -13.9216848,303.797862 L5.66288496,28.7978622 C6.81839036,12.5726406 20.3182545,1.0093501e-14 36.5845697,7.10542736e-15 L79.7697726,2.77347066e-14 Z" id="shade" fill="#67000D" fillRule="nonzero" opacity="0.0961449033" mask="url(#mask-2)" />
             <mask id="mask-4" fill="white">
               <use xlinkHref="#path-3" />
