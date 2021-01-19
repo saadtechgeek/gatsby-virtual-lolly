@@ -2,8 +2,8 @@
   "name": "gatsby-starter-minimal",
   "version": "1.0.0",
   "private": true,
-  "description": "A Gatsby starter with no plugins and a single welcome page.",
-  "author": "Saad Shahid",
+  "description": "A Gatsby starter for running recipes and adding themes. It does not come with any pages.",
+  "author": "Laurie Barth",
   "keywords": [
     "gatsby"
   ],
@@ -11,7 +11,6 @@
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
   "license": "0BSD",
@@ -19,10 +18,14 @@
     "@apollo/client": "^3.2.5",
     "apollo-server-lambda": "^2.18.2",
     "faunadb": "^3.0.1",
-    "graphql": "^15.3.0",
-    "gatsby": "^2.26.1",
+    "gatsby": "^2.24.63",
+    "graphql": "^14.7.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "shortid": "^2.2.16"
+  },
+  "resolutions": {
+    "graphql": "^15.4.0",
+    "**/graphql": "^15.4.0"
   }
 }
